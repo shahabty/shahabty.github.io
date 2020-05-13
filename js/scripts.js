@@ -94,4 +94,17 @@
         });
     });
 
+    $('#back-top').click(function(ev) {
+        ev.preventDefault();
+        $('body,html').animate({scrollTop: 0}, 500);
+    });
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll > 200) { 
+        $('#back-top').fadeIn();    
+    } else {
+        $('#back-top').fadeOut('fast'); 
+    }
+});
+
 })(jQuery);
