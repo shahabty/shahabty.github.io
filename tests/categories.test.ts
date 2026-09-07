@@ -8,19 +8,20 @@ import {
 
 describe('categories', () => {
   it('exposes the three public category ids', () => {
-    expect(CATEGORY_IDS).toEqual(['field-notes', 'quiet-thoughts', 'life-outside']);
+    expect(CATEGORY_IDS).toEqual(['field-notes', 'quiet-thoughts', 'frame-notes']);
   });
 
   it('validates category ids', () => {
     expect(isCategoryId('field-notes')).toBe(true);
-    expect(isCategoryId('life-outside')).toBe(true);
+    expect(isCategoryId('frame-notes')).toBe(true);
+    expect(isCategoryId('life-outside')).toBe(false);
     expect(isCategoryId('random')).toBe(false);
   });
 
   it('returns named metadata for each category', () => {
     expect(getCategory('field-notes').name).toBe('Field Notes');
     expect(getCategory('quiet-thoughts').name).toBe('Quiet Thoughts');
-    expect(getCategory('life-outside').name).toBe('Life Outside');
+    expect(getCategory('frame-notes').name).toBe('Frame Notes');
   });
 
   it('lists categories in stable order', () => {

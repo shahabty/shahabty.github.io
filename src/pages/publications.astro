@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { patents, publications } from '../data/publications';
+---
+
+<BaseLayout
+  title="Publications"
+  description="Selected papers and patents by Shahab Nabavi."
+  path="/publications"
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section__eyebrow">Publications</p>
+      <h1>Publications</h1>
+      <p class="section__lede">
+        Papers and patents from along the way. Links go to the public versions.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="section__title" style="max-width: none; margin-bottom: 0.75rem;">Papers</h2>
+      <ul class="list-plain">
+        {
+          publications.map((item) => (
+            <li class="pub-card">
+              <h3>
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  {item.title}
+                </a>
+              </h3>
+              <p class="meta">{item.authors}</p>
+              <p class="meta">
+                {item.venue}, {item.year}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2 class="section__title" style="max-width: none; margin: 2.5rem 0 0.75rem;">Patents</h2>
+      <ul class="list-plain">
+        {
+          patents.map((item) => (
+            <li class="pub-card">
+              <h3>
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  {item.title}
+                </a>
+              </h3>
+              <p class="meta">
+                {item.number}, {item.year}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

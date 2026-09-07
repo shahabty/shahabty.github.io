@@ -14,6 +14,6 @@ You’ll see three kinds of posts here:
 
 - **Field Notes**: thoughts from working in AI and machine learning
 - **Quiet Thoughts**: more personal writing
-- **Life Outside**: walks, outdoors, and the parts of life that keep work in perspective
+- **Frame Notes**: film and theatre, and how stories connect to science and the future
 
 That’s the whole purpose. If something here is useful to you, I’m glad. If not, that’s fine too. I’m mostly writing to stay honest with myself and leave a trail of what I’ve been thinking about.

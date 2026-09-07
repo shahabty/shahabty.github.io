@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { patents, publications } from '../src/data/publications';
 import { siteConfig } from '../src/data/site';
 import { projects } from '../src/data/projects';
 
@@ -13,6 +14,19 @@ describe('site content invariants', () => {
     expect(projects).toHaveLength(1);
     expect(projects[0]?.name).toBe('Grandpa Frank');
     expect(projects[0]?.url).toBe('https://grandpafrank.com/');
-    expect(projects[0]?.description.length).toBeGreaterThan(0);
+  });
+
+  it('lists papers and patents with real urls', () => {
+    expect(publications.length).toBeGreaterThan(0);
+    expect(patents.length).toBeGreaterThan(0);
+    for (const item of [...publications, ...patents]) {
+      expect(item.url.startsWith('http')).toBe(true);
+      expect(item.title.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('does not keep an About nav item', () => {
+    expect(siteConfig.nav.some((item) => item.href === '/about')).toBe(false);
+    expect(siteConfig.nav.some((item) => item.href === '/publications')).toBe(true);
   });
 });

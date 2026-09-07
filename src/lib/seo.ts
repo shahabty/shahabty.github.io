@@ -16,6 +16,13 @@ export function absoluteUrl(path = '/'): string {
   return new URL(normalized, siteConfig.url).toString();
 }
 
+export function absoluteAssetUrl(pathOrUrl: string): string {
+  if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
+    return pathOrUrl;
+  }
+  return absoluteUrl(pathOrUrl);
+}
+
 export function pageTitle(title: string, includeSiteName = true): string {
   if (!includeSiteName || title === siteConfig.name) {
     return title;
@@ -26,7 +33,7 @@ export function pageTitle(title: string, includeSiteName = true): string {
 export function buildMeta(input: MetaInput) {
   const url = absoluteUrl(input.path ?? '/');
   const title = pageTitle(input.title);
-  const image = input.image ?? siteConfig.author.avatar;
+  const image = absoluteAssetUrl(input.image ?? siteConfig.author.avatar);
 
   return {
     title,
@@ -53,7 +60,7 @@ export function personJsonLd() {
     '@type': 'Person',
     name: siteConfig.author.name,
     url: siteConfig.url,
-    image: siteConfig.author.avatar,
+    image: absoluteAssetUrl(siteConfig.author.avatar),
     jobTitle: siteConfig.author.role,
     worksFor: {
       '@type': 'Organization',
@@ -129,12 +136,12 @@ export function buildLlmsTxt(posts: Array<{ title: string; path: string; descrip
     `Location: ${siteConfig.author.location}`,
     '',
     '## About',
-    siteConfig.author.shortBio,
+    siteConfig.author.longBio.join(' '),
     '',
     '## Primary pages',
     `- Home: ${absoluteUrl('/')}`,
-    `- About: ${absoluteUrl('/about')}`,
     `- Projects: ${absoluteUrl('/projects')}`,
+    `- Publications: ${absoluteUrl('/publications')}`,
     `- Blog: ${absoluteUrl('/blog')}`,
     '',
     '## Social',

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  absoluteAssetUrl,
   absoluteUrl,
   blogPostingJsonLd,
   buildLlmsTxt,
@@ -12,11 +13,17 @@ import {
 describe('seo helpers', () => {
   it('builds absolute urls from site origin', () => {
     expect(absoluteUrl('/blog')).toBe('https://shahabty.github.io/blog');
-    expect(absoluteUrl('about')).toBe('https://shahabty.github.io/about');
+    expect(absoluteUrl('publications')).toBe('https://shahabty.github.io/publications');
+  });
+
+  it('builds absolute asset urls for local avatars', () => {
+    expect(absoluteAssetUrl('/images/shahab.jpg')).toBe(
+      'https://shahabty.github.io/images/shahab.jpg',
+    );
   });
 
   it('composes page titles with the site name', () => {
-    expect(pageTitle('About')).toBe('About · Shahab Nabavi');
+    expect(pageTitle('Publications')).toBe('Publications · Shahab Nabavi');
     expect(pageTitle('Shahab Nabavi')).toBe('Shahab Nabavi');
   });
 
@@ -32,6 +39,7 @@ describe('seo helpers', () => {
     expect(meta.canonical).toBe('https://shahabty.github.io/blog/hello/');
     expect(meta.openGraph.type).toBe('article');
     expect(meta.openGraph.tags).toContain('Field Notes');
+    expect(meta.openGraph.image).toBe('https://shahabty.github.io/images/shahab.jpg');
   });
 
   it('includes person sameAs social profiles', () => {
@@ -46,15 +54,15 @@ describe('seo helpers', () => {
   it('creates website and blog posting json-ld', () => {
     expect(websiteJsonLd()['@type']).toBe('WebSite');
     const post = blogPostingJsonLd({
-      title: 'Trail dust',
-      description: 'A walk',
-      path: '/blog/trail-dust/',
+      title: 'A film note',
+      description: 'A story and science',
+      path: '/blog/a-film-note/',
       pubDate: new Date('2026-09-05T00:00:00.000Z'),
-      categoryName: 'Life Outside',
-      tags: ['outdoors'],
+      categoryName: 'Frame Notes',
+      tags: ['film'],
     });
     expect(post['@type']).toBe('BlogPosting');
-    expect(post.articleSection).toBe('Life Outside');
+    expect(post.articleSection).toBe('Frame Notes');
   });
 
   it('builds llms.txt with post inventory', () => {
@@ -71,5 +79,7 @@ describe('seo helpers', () => {
     expect(text).toContain('## Blog posts');
     expect(text).toContain('[Quiet Thoughts] Hello:');
     expect(text).toContain('https://shahabty.github.io/blog/hello/');
+    expect(text).toContain('/publications');
+    expect(text).not.toContain('/about');
   });
 });

@@ -1,4 +1,4 @@
-export const CATEGORY_IDS = ['field-notes', 'quiet-thoughts', 'life-outside'] as const;
+export const CATEGORY_IDS = ['field-notes', 'quiet-thoughts', 'frame-notes'] as const;
 
 export type CategoryId = (typeof CATEGORY_IDS)[number];
 
@@ -22,11 +22,12 @@ export const categories: Record<CategoryId, Category> = {
     description: 'Personal writing, slower questions I don’t always have answers for.',
     path: '/blog/category/quiet-thoughts',
   },
-  'life-outside': {
-    id: 'life-outside',
-    name: 'Life Outside',
-    description: 'Walking, outdoors, and the parts of life that keep work in perspective.',
-    path: '/blog/category/life-outside',
+  'frame-notes': {
+    id: 'frame-notes',
+    name: 'Frame Notes',
+    description:
+      'Film and theatre, and how stories connect to science and the future.',
+    path: '/blog/category/frame-notes',
   },
 };
 
