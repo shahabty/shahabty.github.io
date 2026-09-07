@@ -16,7 +16,7 @@ export const siteConfig = {
     location: 'Toronto, Canada',
     role: 'Machine Learning MTS',
     company: 'Cerebras Systems',
-    avatar: '/images/shahab.jpg',
+    avatar: '/images/avatar-logo.png',
   },
   links: {
     github: 'https://github.com/shahabty',

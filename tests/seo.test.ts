@@ -18,8 +18,8 @@ describe('seo helpers', () => {
   });
 
   it('builds absolute asset urls for local avatars', () => {
-    expect(absoluteAssetUrl('/images/shahab.jpg')).toBe(
-      'https://shahabty.github.io/images/shahab.jpg',
+    expect(absoluteAssetUrl('/images/avatar-logo.png')).toBe(
+      'https://shahabty.github.io/images/avatar-logo.png',
     );
   });
 
@@ -40,7 +40,7 @@ describe('seo helpers', () => {
     expect(meta.canonical).toBe('https://shahabty.github.io/blog/hello/');
     expect(meta.openGraph.type).toBe('article');
     expect(meta.openGraph.tags).toContain('Field Notes');
-    expect(meta.openGraph.image).toBe('https://shahabty.github.io/images/shahab.jpg');
+    expect(meta.openGraph.image).toBe('https://shahabty.github.io/images/avatar-logo.png');
   });
 
   it('includes person sameAs social profiles', () => {
