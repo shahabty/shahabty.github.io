@@ -8,11 +8,17 @@ export const siteConfig = {
   author: {
     name: 'Shahab Nabavi',
     longBio: [
-      'Most of my work has been in machine learning, computer vision for a long time, and more recently larger models and the systems around them. I still get excited when something finally clicks. I also get tired, stuck, and wrong a lot, which feels important to say out loud.',
-      'I’ve been lucky to learn in research labs and in industry. What I keep coming back to is pretty simple: stay curious, check your assumptions, and remember that the point of all this is people, not just better numbers on a chart.',
-      'When work gets loud, I find a way to calm my mind. Sometimes that means going back to the purpose of what I’m doing. Sometimes it’s nature, a good movie, a play, a long walk, or an unhurried conversation with someone I trust. I don’t treat those things like productivity hacks. They’re just how I come back to myself.',
-      'This site is a place to write things down: notes from AI work, personal thoughts I’m still figuring out, and pieces about film and theatre, especially where stories meet science and the future.',
+      "I've loved computers since I was a kid. It started with installing software, fixing small hardware problems, then learning C++ and getting into RoboCup 2D soccer simulation. At university I chose computer science because I wanted to get really good at it. The further I went, the clearer it became that becoming an expert is a lot harder than it sounds.",
+      'I did my master\'s at the University of Manitoba under Prof. Yang Wang. I also spent a year in a PhD program at York University before leaving to go into industry.',
+      'I started at Huawei Canada in 2020 as an R&D engineer, working on machine learning products that hadn\'t really existed before. Then the LLM boom hit and everything turned into a race. I didn\'t feel especially distinct in that landscape, so I dug in and studied it more seriously. In 2024 I joined Cerebras Systems to focus more closely on LLMs, including model bring-up, evaluation, and related work.',
+      'Around the same time I started building AI tools for internal use, especially for repetitive work people were still doing by hand. That effort went somewhere: we launched an internal product that the company still uses today.',
+      'I wasn\'t alone in any of this. Great colleagues have always been a big part of the work, whether through mentorship, research, code, or day-to-day collaboration.',
+      'Somewhere along the way I realized I\'ve always had a taste for film, and a lot of dreams that might still come true someday. I\'ve also always liked thinking philosophically. So I explored film and theatre a bit to see where I might fit. Writing turned out to be the best match. I do screenwriting part time, and I watch movies both to enjoy them and to learn how they work from another angle.',
     ],
+    advisor: {
+      name: 'Prof. Yang Wang',
+      url: 'https://kywang.github.io/',
+    },
     location: 'Toronto, Canada',
     interests: ['Machine Learning', 'Film'],
     role: 'Machine Learning MTS',

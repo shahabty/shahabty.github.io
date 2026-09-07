@@ -9,6 +9,21 @@ import { estimateReadingTimeMinutes } from '../lib/readingTime';
 const posts = sortByDateDesc(
   (await getCollection('blog', ({ data }) => !data.draft)).slice(),
 ).slice(0, 3);
+
+const { advisor } = siteConfig.author;
+
+function renderBioParagraph(paragraph: string) {
+  const marker = advisor.name;
+  const index = paragraph.indexOf(marker);
+  if (index === -1) {
+    return paragraph;
+  }
+
+  return {
+    before: paragraph.slice(0, index),
+    after: paragraph.slice(index + marker.length),
+  };
+}
 ---
 
 <BaseLayout title={siteConfig.name} path="/">
@@ -23,17 +38,35 @@ const posts = sortByDateDesc(
   </section>
 
   <section class="section section--flush-top">
-    <div class="container">
+    <div class="container split about-layout">
       <div class="prose">
         <p class="section__eyebrow">About</p>
-        <p>
-          Based in {siteConfig.author.location}. Interests: {siteConfig.author.interests.join(', ')}.
-        </p>
-        {siteConfig.author.longBio.map((paragraph) => <p>{paragraph}</p>)}
+        {
+          siteConfig.author.longBio.map((paragraph) => {
+            const linked = renderBioParagraph(paragraph);
+            if (typeof linked === 'string') {
+              return <p>{linked}</p>;
+            }
+
+            return (
+              <p>
+                {linked.before}<a href={advisor.url} target="_blank" rel="noopener noreferrer">{advisor.name}</a>{linked.after}
+              </p>
+            );
+          })
+        }
         <p>
           You can find me on <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>, <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>, and <a href={siteConfig.links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>.
         </p>
       </div>
+      <aside class="about-panel" aria-label="Quick facts">
+        <dl>
+          <dt>Based in</dt>
+          <dd>{siteConfig.author.location}</dd>
+          <dt>Interests</dt>
+          <dd>{siteConfig.author.interests.join(', ')}</dd>
+        </dl>
+      </aside>
     </div>
   </section>
 

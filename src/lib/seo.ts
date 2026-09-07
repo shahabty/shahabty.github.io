@@ -138,6 +138,7 @@ export function buildLlmsTxt(posts: Array<{ title: string; path: string; descrip
     `Site: ${siteConfig.url}`,
     `Author: ${siteConfig.author.name}`,
     `Location: ${siteConfig.author.location}`,
+    `Advisor: ${siteConfig.author.advisor.name} (${siteConfig.author.advisor.url})`,
     '',
     '## About',
     siteConfig.author.longBio.join(' '),
