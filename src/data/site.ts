@@ -10,7 +10,7 @@ export const siteConfig = {
     longBio: [
       'Most of my work has been in machine learning, computer vision for a long time, and more recently larger models and the systems around them. I still get excited when something finally clicks. I also get tired, stuck, and wrong a lot, which feels important to say out loud.',
       'I’ve been lucky to learn in research labs and in industry. What I keep coming back to is pretty simple: stay curious, check your assumptions, and remember that the point of all this is people, not just better numbers on a chart.',
-      'When work gets loud, I go outside. Walking helps. Trees help. Being somewhere without a notification panel helps. I don’t treat that like a productivity hack. It’s just how I come back to myself.',
+      'When work gets loud, I find a way to calm my mind. Sometimes that means going back to the purpose of what I’m doing. Sometimes it’s nature, a good movie, a play, a long walk, or an unhurried conversation with someone I trust. I don’t treat those things like productivity hacks. They’re just how I come back to myself.',
       'This site is a place to write things down: notes from AI work, personal thoughts I’m still figuring out, and pieces about film and theatre, especially where stories meet science and the future.',
     ],
     location: 'Toronto, Canada',
