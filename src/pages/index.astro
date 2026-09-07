@@ -23,26 +23,17 @@ const posts = sortByDateDesc(
   </section>
 
   <section class="section section--flush-top">
-    <div class="container split">
+    <div class="container">
       <div class="prose">
         <p class="section__eyebrow">About</p>
+        <p>
+          Based in {siteConfig.author.location}. Interests: {siteConfig.author.interests.join(', ')}.
+        </p>
         {siteConfig.author.longBio.map((paragraph) => <p>{paragraph}</p>)}
         <p>
           You can find me on <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>, <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>, and <a href={siteConfig.links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>.
         </p>
       </div>
-      <aside class="about-panel" aria-label="Quick facts">
-        <dl>
-          <dt>Based in</dt>
-          <dd>{siteConfig.author.location}</dd>
-          <dt>Role</dt>
-          <dd>{siteConfig.author.role}</dd>
-          <dt>Company</dt>
-          <dd>{siteConfig.author.company}</dd>
-          <dt>Focus</dt>
-          <dd>Machine learning, computer vision, and foundation models.</dd>
-        </dl>
-      </aside>
     </div>
   </section>
 
