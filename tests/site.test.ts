@@ -9,12 +9,10 @@ describe('site content invariants', () => {
     expect(siteConfig.links.scholar).toContain('9jxhbU56FTEC');
   });
 
-  it('features only real github project urls', () => {
-    expect(projects.length).toBeGreaterThan(0);
-    for (const project of projects) {
-      expect(project.url.startsWith('https://github.com/shahabty/')).toBe(true);
-      expect(project.name.length).toBeGreaterThan(0);
-      expect(project.description.length).toBeGreaterThan(0);
-    }
+  it('features Grandpa Frank as the current project', () => {
+    expect(projects).toHaveLength(1);
+    expect(projects[0]?.name).toBe('Grandpa Frank');
+    expect(projects[0]?.url).toBe('https://grandpafrank.com/');
+    expect(projects[0]?.description.length).toBeGreaterThan(0);
   });
 });

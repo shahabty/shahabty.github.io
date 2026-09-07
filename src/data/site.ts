@@ -1,19 +1,19 @@
 export const siteConfig = {
   name: 'Shahab Nabavi',
-  title: 'Curious about intelligence. Soft on being human.',
+  title: 'I work in machine learning. I try not to make that my whole personality.',
   description:
-    'Machine learning engineer in Toronto writing about AI, quiet thoughts, and life outside the screen — with humility, curiosity, and trail dust on the shoes.',
+    'Personal site of Shahab Nabavi, a machine learning engineer in Toronto writing about AI, ordinary thoughts, and time spent outdoors.',
   url: 'https://shahabty.github.io',
   locale: 'en_CA',
   author: {
     name: 'Shahab Nabavi',
     shortBio:
-      'I build and study intelligent systems for a living. Off the clock I chase fresh air, ask simpler questions, and try to stay a decent human.',
+      'I’m a machine learning engineer in Toronto. I like hard problems, long walks, and conversations that don’t need a slide deck.',
     longBio: [
-      'I work in machine learning — the kind of work that asks big questions about perception, language, and how machines might help us. I take that work seriously. I do not take myself too seriously.',
-      'My days have moved through research labs and industry teams. The thread that stayed the same is curiosity: why something works, where it fails, and what it means for the people on the other side of the model.',
-      'Outside of all that, I would rather be outdoors. Trees reset me. Walking resets me. Reminding myself that life is larger than a training run resets me.',
-      'This site is a small place for that mix — field notes from AI, quieter personal thoughts, and pieces about living well beyond the keyboard.',
+      'Most of my work has been in machine learning — computer vision for a long time, and more recently larger models and the systems around them. I still get excited when something finally clicks. I also get tired, stuck, and wrong a lot, which feels important to say out loud.',
+      'I’ve been lucky to learn in research labs and in industry. What I keep coming back to is pretty simple: stay curious, check your assumptions, and remember that the point of all this is people, not just better numbers on a chart.',
+      'When work gets loud, I go outside. Walking helps. Trees help. Being somewhere without a notification panel helps. I don’t treat that like a productivity hack. It’s just how I come back to myself.',
+      'This site is a place to write things down — notes from AI work, personal thoughts I’m still figuring out, and pieces about living a life that isn’t only screens.',
     ],
     location: 'Toronto, Canada',
     role: 'Machine Learning MTS',

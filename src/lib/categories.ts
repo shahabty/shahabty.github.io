@@ -13,19 +13,19 @@ export const categories: Record<CategoryId, Category> = {
   'field-notes': {
     id: 'field-notes',
     name: 'Field Notes',
-    description: 'AI, machine learning, and notes from the work of building intelligent systems.',
+    description: 'Thoughts from working in AI and machine learning.',
     path: '/blog/category/field-notes',
   },
   'quiet-thoughts': {
     id: 'quiet-thoughts',
     name: 'Quiet Thoughts',
-    description: 'Personal reflections — softer questions about identity, ambition, and becoming.',
+    description: 'Personal writing — slower questions I don’t always have answers for.',
     path: '/blog/category/quiet-thoughts',
   },
   'life-outside': {
     id: 'life-outside',
     name: 'Life Outside',
-    description: 'Outdoors, living well, and the human parts that keep the work honest.',
+    description: 'Walking, outdoors, and the parts of life that keep work in perspective.',
     path: '/blog/category/life-outside',
   },
 };

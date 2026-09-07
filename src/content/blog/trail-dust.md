@@ -1,23 +1,23 @@
 ---
-title: "Trail dust is a better teacher than a dashboard"
-description: "Why walking outside resets the parts of me that screens quietly wear down — and how that helps the work I do with AI."
+title: "A walk usually fixes more than another tab"
+description: "When work piles up, going outside is still the most reliable reset I know."
 pubDate: 2026-09-05
 category: life-outside
-tags: [outdoors, walking, balance]
+tags: [outdoors, walking]
 ---
 
-Some days my brain feels like a browser with forty tabs open and no idea which one matters.
+Some days my head feels crowded in a very modern way: too many open loops, too little quiet.
 
-That is usually my cue to leave the building.
+When that happens, the useful move is rarely another meeting or another browser tab. It’s usually a walk.
 
-I don’t need a dramatic mountain every time. A quiet path works. Trees work. Wind that does not care about my deadlines works. There is something about moving through the world without a progress bar that softens me in the right places.
+I don’t need a dramatic hike every time. A neighborhood path is enough. Trees are enough. Moving for twenty minutes without trying to optimize the walk is enough. Something in me settles when the world gets physical again — air, ground, distance — and the screen stops being the whole frame.
 
-Outdoors, I remember a few things the dashboard forgets:
+I’ve noticed a few things come back online outdoors:
 
-- Effort does not always need an audience.
-- Beauty does not need a metric.
-- My body is not an inconvenience attached to a laptop.
+- I remember I have a body, not just a calendar
+- problems look smaller when I’m not staring at them
+- I feel less like a machine that needs to produce
 
-I work in AI because I am curious about intelligence. I walk outside because I am loyal to being alive.
+I work in AI because I’m curious. I go outside because I don’t want that curiosity to eat the rest of my life.
 
-If you are in a season of intense building — papers, models, launches, late nights — I hope you also protect a little trail dust in your week. Not as productivity advice. As a reminder that you are a human first, and a builder second.
+If you’re in a heavy stretch of building right now, I’m not going to turn this into advice with a checklist. I’ll just say: a short walk has saved more of my weeks than most productivity systems ever did.

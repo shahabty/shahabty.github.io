@@ -1,36 +1,26 @@
-# Personal Website — Plan
-
-## Goal
-GitHub Pages personal site for Shahab Nabavi (`shahabty.github.io`): bio, social links, projects, SEO/AI-optimized blog, unit tests. Build and preview locally first; push only after approval.
-
-## Confirmed content
-- LinkedIn: https://www.linkedin.com/in/shahab-nabavi/
-- GitHub: https://github.com/shahabty
-- Scholar: https://scholar.google.com/citations?user=9jxhbU56FTEC&hl=en
-- Voice: curious, humble, outdoors-loving; AI career as journey; human/life first
-- Blog persona: lovable & shareable; thoughts are Shahab's; warm, human, lightly witty
-- Categories:
-  - **Field Notes** — AI / ML / tech reflections
-  - **Quiet Thoughts** — personal reflections
-  - **Life Outside** — outdoors, living, human moments
-
-## Stack
-- Astro + TypeScript + Markdown content collections
-- Vitest unit tests
-- GitHub Actions → `shahabty.github.io`
+# UI Responsiveness Fixes
 
 ## Checklist
-- [x] Confirm plan + content answers with user
-- [x] Scaffold Astro project + tooling
-- [x] Site config, layout, design system
-- [x] Home, About, Projects pages
-- [x] Blog collection + categories + SEO/AI surfaces
-- [x] Unit tests (18 passing)
-- [x] Local preview for user review
-- [ ] Push to GitHub only after approval
+- [x] Critical: focus-visible styles
+- [x] Critical: mobile nav header height / touch targets
+- [x] Critical: darken ink-soft / ink-faint contrast
+- [x] Important: skip link + main id
+- [x] Important: scroll-padding-top
+- [x] Important: safe-area insets
+- [x] Important: touch-action manipulation
+- [x] Important: Safari -webkit-mask
+- [x] Important: font-weight 550 → 600
+- [x] Important: widen title max-widths + text-wrap pretty
+- [x] Important: category/badge touch targets
+- [x] Important: raise header backdrop alpha
+- [x] Nice: theme-color meta
+- [x] Nice: font preload
+- [x] Nice: overflow-x clip
+- [x] Run npm test + npm run build
+- [x] Restart preview on 4321
 
 ## Review
-- Stack: Astro 7 + Vitest + GitHub Actions Pages deploy
-- Voice: humble, curious, outdoors/human-first; title “Curious about intelligence. Soft on being human.”
-- Categories: Field Notes, Quiet Thoughts, Life Outside
-- SEO/AI: JSON-LD, OG, robots.txt, sitemap, RSS, llms.txt, per-post `.md`
+- All Critical (1–3), Important (4–12), and Nice-to-have (13–15) applied
+- Files: `src/styles/global.css`, `src/layouts/BaseLayout.astro` (Header unchanged; skip link lives in layout)
+- `npm test` 18/18 pass; `npm run build` success
+- Preview: http://127.0.0.1:4321/

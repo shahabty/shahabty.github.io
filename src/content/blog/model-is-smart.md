@@ -1,23 +1,23 @@
 ---
-title: "The model is smart. That doesn’t make me special."
-description: "A field note on humility in AI — why awe for the work should not turn into ego about the worker."
+title: "Impressive models are easy to confuse with an impressive self"
+description: "A reminder I need more often than I’d like: the work can be remarkable without me needing to inflate around it."
 pubDate: 2026-09-03
 category: field-notes
-tags: [ai, humility, craft]
+tags: [ai, humility]
 ---
 
-There is a quiet trap in this field.
+There’s a moment that happens in this field.
 
-You spend months shaping data, training systems, reading papers late, and watching a model do something that used to feel impossible. Then a small voice arrives: *maybe I’m a little extraordinary for touching this.*
+You’ve been stuck for weeks. Then the model does something that used to feel out of reach, and for a second you feel larger than you did that morning. It’s understandable. It’s also a little dangerous.
 
-I try not to believe that voice.
+I’ve started treating that feeling as a warning light.
 
-The work can be extraordinary. The systems can be powerful. The questions can be deep. I am still just a person with limited patience, messy mornings, and a preference for fresh air over endless self-mythology.
+Yes, the work can be exciting. Yes, progress matters. But I’m still the same person who forgets things, needs sleep, and benefits a lot from leaving the building. Touching powerful systems does not make someone wise. It just raises the stakes on staying careful.
 
-Humility is not false modesty. It is accuracy.
+What humility looks like for me, practically:
 
-It means saying “I don’t know” when I don’t. It means celebrating progress without turning every breakthrough into a personal monument. It means remembering that behind every impressive demo there are people, constraints, tradeoffs, and plenty of nights where nothing worked.
+- saying “I don’t know” before I invent confidence
+- separating “this result is interesting” from “I am interesting”
+- remembering the boring parts — data issues, failed runs, misunderstandings — are most of the job
 
-AI will keep getting more capable. I hope I keep getting more grounded.
-
-If a model teaches me anything useful about intelligence, let it also remind me how much of a good life has nothing to do with being the smartest person in the room.
+I hope the models keep getting better. I also hope I keep getting better at not needing them to prove anything about me.

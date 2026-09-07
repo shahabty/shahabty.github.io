@@ -1,21 +1,21 @@
 ---
-title: "Still learning how to be a person who builds machines"
-description: "A soft introduction — who I am, why this site exists, and what you’ll find here when you wander through."
+title: "Why I started writing here"
+description: "A short note on who I am and what this blog is for."
 pubDate: 2026-09-01
 category: quiet-thoughts
-tags: [introduction, humility, identity]
+tags: [introduction, writing]
 ---
 
-Hi. I’m Shahab.
+Hi — I’m Shahab.
 
-I spend a lot of my professional life around intelligent systems — models that see, predict, generate, and sometimes surprise us. That work is fascinating. It is also incomplete without the quieter work of staying human while doing it.
+I spend a lot of my time around machine learning. It’s work I care about. It’s also easy to let it take over the whole week, and then wonder why everything feels a little flat.
 
-This site is not a highlight reel. It is a small notebook I can keep in public.
+I wanted a place to write without performing. Not a portfolio in disguise. Just notes — some about AI, some about quieter personal stuff, some about getting outside and remembering there’s a world that doesn’t care about my deadlines.
 
-You’ll find three kinds of writing:
+You’ll see three categories here:
 
-- **Field Notes** — thoughts from AI and machine learning, written without pretending I have the universe figured out.
-- **Quiet Thoughts** — personal reflections on ambition, softness, and becoming.
-- **Life Outside** — the outdoors and the ordinary moments that keep me honest.
+- **Field Notes** — things I’m thinking about from AI and ML work
+- **Quiet Thoughts** — more personal writing
+- **Life Outside** — walks, outdoors, and ordinary life
 
-If you came here looking for a polished personal brand, you may be slightly disappointed. If you came looking for a curious person who loves intelligence *and* trees, welcome. Take your shoes off. Stay as long as you like.
+If something here is useful to you, I’m glad. If not, that’s fine too. I’m mostly writing to stay honest with myself.

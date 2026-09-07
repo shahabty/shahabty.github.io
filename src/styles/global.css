@@ -3,8 +3,8 @@
   --bg: #eef2f6;
   --bg-elevated: #f8fafc;
   --ink: #182231;
-  --ink-soft: #4d5a6c;
-  --ink-faint: #7a8698;
+  --ink-soft: #3a4658;
+  --ink-faint: #5c6b7e;
   --accent: #1f4f8f;
   --accent-soft: #d7e5f6;
   --accent-deep: #163a6b;
@@ -16,6 +16,10 @@
   --space: clamp(1rem, 2vw, 1.5rem);
   --measure: 68ch;
   --header-h: 4.25rem;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
 }
 
 *,
@@ -26,11 +30,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 0.75rem);
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-body);
   color: var(--ink);
   background:
@@ -40,6 +47,9 @@ body {
   line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
 }
 
 body::before {
@@ -52,6 +62,7 @@ body::before {
     linear-gradient(rgba(24, 34, 49, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(24, 34, 49, 0.03) 1px, transparent 1px);
   background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
   mask-image: radial-gradient(circle at center, black, transparent 85%);
   z-index: 0;
 }
@@ -60,6 +71,26 @@ a {
   color: inherit;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
+}
+
+a,
+.button,
+.nav a,
+.badge,
+.category-filters a,
+.brand {
+  touch-action: manipulation;
+}
+
+a:focus-visible,
+.button:focus-visible,
+.nav a:focus-visible,
+.badge:focus-visible,
+.category-filters a:focus-visible,
+.brand:focus-visible,
+.skip-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 img {
@@ -72,20 +103,42 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 550;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0 0 0.6em;
+  text-wrap: pretty;
 }
 
 p {
   margin: 0 0 1rem;
 }
 
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  background: var(--ink);
+  color: #f7fafc;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transform: translateY(-150%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 .site-shell {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -100,16 +153,20 @@ p {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(14px);
-  background: rgba(245, 247, 250, 0.78);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(245, 247, 250, 0.92);
   border-bottom: 1px solid var(--line);
+  padding-top: var(--safe-top);
 }
 
 .site-header__inner {
-  height: var(--header-h);
+  min-height: var(--header-h);
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.75rem;
+  padding-block: 0.35rem;
 }
 
 .brand {
@@ -117,17 +174,23 @@ p {
   font-size: 1.2rem;
   letter-spacing: -0.03em;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav {
   display: flex;
-  gap: 0.35rem 1.1rem;
+  gap: 0.15rem 0.35rem;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .nav a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.55rem 0.5rem;
   text-decoration: none;
   color: var(--ink-soft);
   font-size: 0.95rem;
@@ -136,9 +199,9 @@ p {
 .nav a::after {
   content: '';
   position: absolute;
-  left: 0;
-  bottom: -0.2rem;
-  width: 100%;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.35rem;
   height: 1.5px;
   background: var(--accent);
   transform: scaleX(0);
@@ -156,6 +219,25 @@ p {
   transform: scaleX(1);
 }
 
+@media (max-width: 480px) {
+  .site-header__inner {
+    gap: 0.5rem;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .nav {
+    gap: 0;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+    padding-inline: 0.4rem;
+  }
+}
+
 main {
   flex: 1;
 }
@@ -163,7 +245,7 @@ main {
 .site-footer {
   border-top: 1px solid var(--line);
   margin-top: 4rem;
-  padding: 2rem 0 2.5rem;
+  padding: 2rem 0 calc(2.5rem + var(--safe-bottom));
   color: var(--ink-soft);
   font-size: 0.95rem;
 }
@@ -185,6 +267,7 @@ main {
 .socials a {
   text-decoration: none;
   color: var(--accent-deep);
+  touch-action: manipulation;
 }
 
 .socials a:hover {
@@ -203,6 +286,7 @@ main {
   letter-spacing: -0.04em;
   margin-bottom: 1rem;
   max-width: 12ch;
+  text-wrap: pretty;
 }
 
 .hero__title {
@@ -210,8 +294,9 @@ main {
   font-size: clamp(1.35rem, 3vw, 1.85rem);
   font-weight: 500;
   color: var(--accent-deep);
-  max-width: 22ch;
+  max-width: 32ch;
   margin-bottom: 1rem;
+  text-wrap: pretty;
 }
 
 .hero__lede {
@@ -232,6 +317,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
+  min-height: 44px;
   padding: 0.78rem 1.15rem;
   border-radius: 999px;
   border: 1px solid transparent;
@@ -280,7 +366,7 @@ main {
 
 .section__title {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  max-width: 18ch;
+  max-width: 22ch;
 }
 
 .section__lede {
@@ -315,17 +401,18 @@ main {
 
 .meta {
   color: var(--ink-faint);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.22rem 0.65rem;
+  min-height: 2rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent-deep);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
 }
@@ -406,10 +493,13 @@ main {
 }
 
 .category-filters a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: none;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.4rem 0.85rem;
+  padding: 0.55rem 1rem;
   font-size: 0.9rem;
   color: var(--ink-soft);
   background: rgba(255, 255, 255, 0.45);
@@ -429,7 +519,7 @@ main {
 
 .page-hero h1 {
   font-size: clamp(2.2rem, 6vw, 3.4rem);
-  max-width: 14ch;
+  max-width: 28ch;
 }
 
 .about-panel {
@@ -462,7 +552,7 @@ main {
 
 .post-header h1 {
   font-size: clamp(2rem, 5.5vw, 3.1rem);
-  max-width: 18ch;
+  max-width: 28ch;
 }
 
 @keyframes rise {
@@ -486,7 +576,8 @@ main {
   .page-hero,
   .post-header,
   .button,
-  .nav a::after {
+  .nav a::after,
+  .skip-link {
     animation: none !important;
     transition: none !important;
   }

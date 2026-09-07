@@ -5,13 +5,13 @@ import { siteConfig } from '../data/site';
 
 <BaseLayout
   title="About"
-  description={`About ${siteConfig.author.name} — machine learning engineer in Toronto with a soft spot for outdoors and human-centered living.`}
+  description={`About ${siteConfig.author.name}, a machine learning engineer in Toronto who cares about AI work and also about ordinary life outside of it.`}
   path="/about"
 >
   <section class="page-hero">
     <div class="container">
       <p class="section__eyebrow">About</p>
-      <h1>A curious person with an AI journey — and a life outside it.</h1>
+      <h1>A bit about me</h1>
     </div>
   </section>
 
@@ -20,10 +20,10 @@ import { siteConfig } from '../data/site';
       <div class="prose">
         {siteConfig.author.longBio.map((paragraph) => <p>{paragraph}</p>)}
         <p>
-          You can find me on
-          <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>,
+          You can find me on{' '}
+          <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>,{' '}
           <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>,
-          and
+          and{' '}
           <a href={siteConfig.links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>.
         </p>
       </div>
@@ -36,7 +36,7 @@ import { siteConfig } from '../data/site';
           <dt>Company</dt>
           <dd>{siteConfig.author.company}</dd>
           <dt>Focus</dt>
-          <dd>Machine learning, computer vision, foundation models — and staying kind.</dd>
+          <dd>Machine learning, computer vision, and foundation models.</dd>
         </dl>
       </aside>
     </div>
