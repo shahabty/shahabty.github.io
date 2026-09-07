@@ -1,6 +1,6 @@
 ---
 import { getCategory, type CategoryId } from '../lib/categories';
-import { formatDate } from '../lib/dates';
+import { formatDate, toIsoDate } from '../lib/dates';
 import { readingTimeLabel } from '../lib/readingTime';
 
 type Props = {
@@ -19,7 +19,8 @@ const categoryMeta = getCategory(category);
 <article class="post-card">
   <div class="meta">
     <a class="badge" href={categoryMeta.path}>{categoryMeta.name}</a>
-    <span>, {formatDate(pubDate)}, {readingTimeLabel(readingMinutes)}</span>
+    <time datetime={toIsoDate(pubDate)}>{formatDate(pubDate)}</time>
+    <span>{readingTimeLabel(readingMinutes)}</span>
   </div>
   <h3><a href={href}>{title}</a></h3>
   <p>{description}</p>

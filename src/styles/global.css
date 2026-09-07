@@ -396,7 +396,7 @@ main {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 1rem;
+  gap: 0;
 }
 
 .meta {
@@ -404,15 +404,31 @@ main {
   font-size: 0.95rem;
 }
 
+.post-card .meta,
+.post-header .meta:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 0.55rem;
+}
+
+.post-card .meta time,
+.post-card .meta > span,
+.post-header .meta time,
+.post-header .meta > span {
+  line-height: 1.2;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
-  min-height: 2rem;
-  padding: 0.35rem 0.75rem;
+  min-height: 1.75rem;
+  padding: 0.2rem 0.65rem;
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent-deep);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
 }
@@ -423,19 +439,21 @@ main {
 
 .post-card,
 .project-card {
-  padding: 1.25rem 0;
+  padding: 1.35rem 0;
   border-bottom: 1px solid var(--line);
 }
 
-.post-card:first-child,
-.project-card:first-child {
+.stack > .post-card:first-child,
+.stack > .project-card:first-child,
+.list-plain > li:first-child .post-card,
+.list-plain > li:first-child .project-card {
   border-top: 1px solid var(--line);
 }
 
 .post-card h3,
 .project-card h3 {
   font-size: 1.35rem;
-  margin-bottom: 0.35rem;
+  margin: 0 0 0.4rem;
 }
 
 .post-card h3 a,
@@ -451,7 +469,7 @@ main {
 .post-card p,
 .project-card p {
   color: var(--ink-soft);
-  margin-bottom: 0.55rem;
+  margin: 0;
 }
 
 .topics {
