@@ -18,6 +18,6 @@ What humility looks like for me, practically:
 
 - saying “I don’t know” before I invent confidence
 - separating “this result is interesting” from “I am interesting”
-- remembering the boring parts — data issues, failed runs, misunderstandings — are most of the job
+- remembering the boring parts (data issues, failed runs, misunderstandings) are most of the job
 
 I hope the models keep getting better. I also hope I keep getting better at not needing them to prove anything about me.

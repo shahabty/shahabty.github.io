@@ -146,7 +146,7 @@ export function buildLlmsTxt(posts: Array<{ title: string; path: string; descrip
   ];
 
   for (const post of posts) {
-    lines.push(`- [${post.category}] ${post.title}: ${absoluteUrl(post.path)} — ${post.description}`);
+    lines.push(`- [${post.category}] ${post.title}: ${absoluteUrl(post.path)}. ${post.description}`);
   }
 
   lines.push('', '## Preferred citation');

@@ -10,7 +10,7 @@ Some days my head feels crowded in a very modern way: too many open loops, too l
 
 When that happens, the useful move is rarely another meeting or another browser tab. It’s usually a walk.
 
-I don’t need a dramatic hike every time. A neighborhood path is enough. Trees are enough. Moving for twenty minutes without trying to optimize the walk is enough. Something in me settles when the world gets physical again — air, ground, distance — and the screen stops being the whole frame.
+I don’t need a dramatic hike every time. A neighborhood path is enough. Trees are enough. Moving for twenty minutes without trying to optimize the walk is enough. Something in me settles when the world gets physical again (air, ground, distance) and the screen stops being the whole frame.
 
 I’ve noticed a few things come back online outdoors:
 

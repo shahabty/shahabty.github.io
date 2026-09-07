@@ -19,7 +19,7 @@ const categoryMeta = getCategory(category);
 <article class="post-card">
   <div class="meta">
     <a class="badge" href={categoryMeta.path}>{categoryMeta.name}</a>
-    <span> · {formatDate(pubDate)} · {readingTimeLabel(readingMinutes)}</span>
+    <span>, {formatDate(pubDate)}, {readingTimeLabel(readingMinutes)}</span>
   </div>
   <h3><a href={href}>{title}</a></h3>
   <p>{description}</p>

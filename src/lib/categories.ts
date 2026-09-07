@@ -19,7 +19,7 @@ export const categories: Record<CategoryId, Category> = {
   'quiet-thoughts': {
     id: 'quiet-thoughts',
     name: 'Quiet Thoughts',
-    description: 'Personal writing — slower questions I don’t always have answers for.',
+    description: 'Personal writing, slower questions I don’t always have answers for.',
     path: '/blog/category/quiet-thoughts',
   },
   'life-outside': {

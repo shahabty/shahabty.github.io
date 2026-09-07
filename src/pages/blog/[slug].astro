@@ -50,8 +50,7 @@ const modifiedTime = (post.data.updatedDate ?? post.data.pubDate).toISOString();
         <p class="meta">
           <a class="badge" href={category.path}>{category.name}</a>
           <span>
-            · <time datetime={toIsoDate(post.data.pubDate)}>{formatDate(post.data.pubDate)}</time>
-            · {readingTimeLabel(readingMinutes)}
+            , <time datetime={toIsoDate(post.data.pubDate)}>{formatDate(post.data.pubDate)}</time>, {readingTimeLabel(readingMinutes)}
           </span>
         </p>
         <h1>{post.data.title}</h1>
