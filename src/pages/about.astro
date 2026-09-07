@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title="About"
+  description={`About ${siteConfig.author.name} — machine learning engineer in Toronto with a soft spot for outdoors and human-centered living.`}
+  path="/about"
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section__eyebrow">About</p>
+      <h1>A curious person with an AI journey — and a life outside it.</h1>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container split">
+      <div class="prose">
+        {siteConfig.author.longBio.map((paragraph) => <p>{paragraph}</p>)}
+        <p>
+          You can find me on
+          <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>,
+          <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+          and
+          <a href={siteConfig.links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>.
+        </p>
+      </div>
+      <aside class="about-panel" aria-label="Quick facts">
+        <dl>
+          <dt>Based in</dt>
+          <dd>{siteConfig.author.location}</dd>
+          <dt>Role</dt>
+          <dd>{siteConfig.author.role}</dd>
+          <dt>Company</dt>
+          <dd>{siteConfig.author.company}</dd>
+          <dt>Focus</dt>
+          <dd>Machine learning, computer vision, foundation models — and staying kind.</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

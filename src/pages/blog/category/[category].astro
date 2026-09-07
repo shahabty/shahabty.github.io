@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CategoryFilters from '../../../components/CategoryFilters.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { CATEGORY_IDS, getCategory, isCategoryId } from '../../../lib/categories';
+import { sortByDateDesc } from '../../../lib/dates';
+import { estimateReadingTimeMinutes } from '../../../lib/readingTime';
+
+export function getStaticPaths() {
+  return CATEGORY_IDS.map((category) => ({
+    params: { category },
+  }));
+}
+
+const { category: categoryParam } = Astro.params;
+
+if (!categoryParam || !isCategoryId(categoryParam)) {
+  return Astro.redirect('/blog');
+}
+
+const category = getCategory(categoryParam);
+const posts = sortByDateDesc(
+  await getCollection('blog', ({ data }) => !data.draft && data.category === categoryParam),
+);
+---
+
+<BaseLayout
+  title={category.name}
+  description={category.description}
+  path={category.path}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section__eyebrow">Blog · {category.name}</p>
+      <h1>{category.name}</h1>
+      <p class="section__lede">{category.description}</p>
+      <CategoryFilters active={category.id} />
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      {
+        posts.length === 0 ? (
+          <p class="section__lede">No posts in this category yet.</p>
+        ) : (
+          <ul class="list-plain">
+            {posts.map((post) => (
+              <li>
+                <PostCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  href={`/blog/${post.id}/`}
+                  pubDate={post.data.pubDate}
+                  category={post.data.category}
+                  readingMinutes={estimateReadingTimeMinutes(post.body ?? '')}
+                />
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

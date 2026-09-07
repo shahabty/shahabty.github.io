@@ -1,0 +1,21 @@
+---
+import { listCategories, type CategoryId } from '../lib/categories';
+
+type Props = {
+  active?: CategoryId | 'all';
+};
+
+const { active = 'all' } = Astro.props;
+const categories = listCategories();
+---
+
+<div class="category-filters" role="navigation" aria-label="Blog categories">
+  <a href="/blog" aria-current={active === 'all' ? 'page' : undefined}>All</a>
+  {
+    categories.map((category) => (
+      <a href={category.path} aria-current={active === category.id ? 'page' : undefined}>
+        {category.name}
+      </a>
+    ))
+  }
+</div>

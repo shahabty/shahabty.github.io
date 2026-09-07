@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { siteConfig } from '../data/site';
+import { getCollection } from 'astro:content';
+import { sortByDateDesc } from '../lib/dates';
+import { estimateReadingTimeMinutes } from '../lib/readingTime';
+
+const posts = sortByDateDesc(
+  (await getCollection('blog', ({ data }) => !data.draft)).slice(),
+).slice(0, 3);
+---
+
+<BaseLayout title={siteConfig.name} path="/">
+  <section class="hero">
+    <div class="container">
+      <p class="hero__brand">{siteConfig.name}</p>
+      <h1 class="hero__title">{siteConfig.title}</h1>
+      <p class="hero__lede">{siteConfig.author.shortBio}</p>
+      <div class="cta-row">
+        <a class="button button--primary" href="/blog">Read the blog</a>
+        <a class="button button--ghost" href="/projects">See projects</a>
+        <a class="button button--ghost" href="/about">About me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="section__eyebrow">Lately</p>
+        <h2 class="section__title">Notes from the trail between work and life</h2>
+        <p class="section__lede">
+          Field notes from AI, quieter personal thoughts, and the outdoor reminders that keep me soft.
+        </p>
+      </div>
+      <div class="stack">
+        {
+          posts.map((post) => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              href={`/blog/${post.id}/`}
+              pubDate={post.data.pubDate}
+              category={post.data.category}
+              readingMinutes={estimateReadingTimeMinutes(post.body ?? '')}
+            />
+          ))
+        }
+        <p><a href="/blog">All posts →</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

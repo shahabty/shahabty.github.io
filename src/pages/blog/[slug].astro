@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCategory } from '../../lib/categories';
+import { formatDate, toIsoDate } from '../../lib/dates';
+import { estimateReadingTimeMinutes, readingTimeLabel } from '../../lib/readingTime';
+import { blogPostingJsonLd, personJsonLd } from '../../lib/seo';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const category = getCategory(post.data.category);
+const path = `/blog/${post.id}/`;
+const readingMinutes = estimateReadingTimeMinutes(post.body ?? '');
+const publishedTime = post.data.pubDate.toISOString();
+const modifiedTime = (post.data.updatedDate ?? post.data.pubDate).toISOString();
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  path={path}
+  type="article"
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  tags={[category.name, ...post.data.tags]}
+  jsonLd={[
+    blogPostingJsonLd({
+      title: post.data.title,
+      description: post.data.description,
+      path,
+      pubDate: post.data.pubDate,
+      updatedDate: post.data.updatedDate,
+      categoryName: category.name,
+      tags: post.data.tags,
+    }),
+    personJsonLd(),
+  ]}
+>
+  <article>
+    <header class="post-header">
+      <div class="container">
+        <p class="meta">
+          <a class="badge" href={category.path}>{category.name}</a>
+          <span>
+            · <time datetime={toIsoDate(post.data.pubDate)}>{formatDate(post.data.pubDate)}</time>
+            · {readingTimeLabel(readingMinutes)}
+          </span>
+        </p>
+        <h1>{post.data.title}</h1>
+        <p class="section__lede">{post.data.description}</p>
+        <p class="meta">
+          <a href={`/blog/${post.id}.md`}>Plain markdown for AI crawlers</a>
+        </p>
+      </div>
+    </header>
+    <div class="container prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
