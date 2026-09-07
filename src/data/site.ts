@@ -14,7 +14,7 @@ export const siteConfig = {
       'This site is a place to write things down: notes from AI work, personal thoughts I’m still figuring out, and pieces about film and theatre, especially where stories meet science and the future.',
     ],
     location: 'Toronto, Canada',
-    interests: ['machine learning', 'film'],
+    interests: ['Machine Learning', 'Film'],
     role: 'Machine Learning MTS',
     company: 'Cerebras Systems',
     avatar: '/images/avatar-logo.png',
