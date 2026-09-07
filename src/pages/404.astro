@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found"
+  description="That page does not exist on Shahab Nabavi’s site."
+  path="/404.html"
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section__eyebrow">404</p>
+      <h1>This page isn’t here.</h1>
+      <p class="section__lede">It may have moved, or the link might be old.</p>
+      <div class="cta-row">
+        <a class="button button--primary" href="/">Go home</a>
+        <a class="button button--ghost" href="/blog/">Read the blog</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

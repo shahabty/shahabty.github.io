@@ -29,7 +29,7 @@ npm run dev
 
 - **Field Notes** — AI / ML
 - **Quiet Thoughts** — personal reflections
-- **Life Outside** — outdoors and living
+- **Frame Notes** — film, theatre, science, and the future
 
 Add a post as a Markdown file in `src/content/blog/` with frontmatter:
 
@@ -43,7 +43,7 @@ tags: [ai]
 ---
 ```
 
-Valid categories: `field-notes`, `quiet-thoughts`, `life-outside`.
+Valid categories: `field-notes`, `quiet-thoughts`, `frame-notes`.
 
 ## SEO / AI crawlers
 

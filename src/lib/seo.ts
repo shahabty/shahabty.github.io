@@ -12,7 +12,11 @@ export type MetaInput = {
 };
 
 export function absoluteUrl(path = '/'): string {
-  const normalized = path.startsWith('/') ? path : `/${path}`;
+  let normalized = path.startsWith('/') ? path : `/${path}`;
+  const looksLikeFile = /\.[a-z0-9]+$/i.test(normalized);
+  if (!looksLikeFile && !normalized.endsWith('/')) {
+    normalized += '/';
+  }
   return new URL(normalized, siteConfig.url).toString();
 }
 

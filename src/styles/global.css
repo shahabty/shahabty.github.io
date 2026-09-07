@@ -281,6 +281,9 @@ main {
 }
 
 .socials a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: none;
   color: var(--accent-deep);
   touch-action: manipulation;
@@ -372,6 +375,10 @@ main {
   animation-delay: 80ms;
 }
 
+.section--flush-top {
+  padding-top: 0;
+}
+
 .section__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -398,7 +405,7 @@ main {
 @media (min-width: 860px) {
   .split {
     grid-template-columns: 1.1fr 0.9fr;
-    align-items: end;
+    align-items: start;
   }
 }
 
@@ -439,8 +446,9 @@ main {
 .badge {
   display: inline-flex;
   align-items: center;
-  min-height: 1.75rem;
-  padding: 0.2rem 0.65rem;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.35rem 0.85rem;
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent-deep);

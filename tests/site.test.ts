@@ -27,6 +27,6 @@ describe('site content invariants', () => {
 
   it('does not keep an About nav item', () => {
     expect(siteConfig.nav.some((item) => item.href === '/about')).toBe(false);
-    expect(siteConfig.nav.some((item) => item.href === '/publications')).toBe(true);
+    expect(siteConfig.nav.some((item) => item.href === '/publications/')).toBe(true);
   });
 });

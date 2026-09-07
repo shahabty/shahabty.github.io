@@ -12,7 +12,7 @@ const posts = sortByDateDesc(await getCollection('blog', ({ data }) => !data.dra
 <BaseLayout
   title="Blog"
   description="Writing by Shahab Nabavi across Field Notes (AI), Quiet Thoughts, and Frame Notes (film and theatre)."
-  path="/blog"
+  path="/blog/"
 >
   <section class="page-hero">
     <div class="container">
@@ -25,7 +25,7 @@ const posts = sortByDateDesc(await getCollection('blog', ({ data }) => !data.dra
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;">
+  <section class="section section--flush-top">
     <div class="container">
       <ul class="list-plain">
         {

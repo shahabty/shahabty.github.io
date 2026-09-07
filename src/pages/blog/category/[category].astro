@@ -16,7 +16,7 @@ export function getStaticPaths() {
 const { category: categoryParam } = Astro.params;
 
 if (!categoryParam || !isCategoryId(categoryParam)) {
-  return Astro.redirect('/blog');
+  return Astro.redirect('/blog/');
 }
 
 const category = getCategory(categoryParam);
@@ -39,7 +39,7 @@ const posts = sortByDateDesc(
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;">
+  <section class="section section--flush-top">
     <div class="container">
       {
         posts.length === 0 ? (

@@ -12,8 +12,9 @@ import {
 
 describe('seo helpers', () => {
   it('builds absolute urls from site origin', () => {
-    expect(absoluteUrl('/blog')).toBe('https://shahabty.github.io/blog');
-    expect(absoluteUrl('publications')).toBe('https://shahabty.github.io/publications');
+    expect(absoluteUrl('/blog')).toBe('https://shahabty.github.io/blog/');
+    expect(absoluteUrl('publications')).toBe('https://shahabty.github.io/publications/');
+    expect(absoluteUrl('/rss.xml')).toBe('https://shahabty.github.io/rss.xml');
   });
 
   it('builds absolute asset urls for local avatars', () => {
