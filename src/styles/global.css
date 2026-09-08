@@ -732,6 +732,19 @@ main {
   margin-bottom: 1.1rem;
 }
 
+.page-hero .section__lede {
+  margin-top: -0.35rem;
+}
+
+.about-layout .prose {
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.about-layout .prose p {
+  margin-bottom: 1.15rem;
+}
+
 .about-panel {
   padding: 1.4rem 1.5rem;
   border: 1px solid var(--line);
