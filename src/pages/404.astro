@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBuildId } from '../lib/buildId';
 ---
 
 <BaseLayout
@@ -14,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="section__lede">It may have moved, or the link might be old.</p>
       <div class="cta-row">
         <a class="button button--primary" href="/">Go home</a>
-        <a class="button button--ghost" href="/blog/">Read the blog</a>
+        <a class="button button--ghost" href={withBuildId('/blog/')}>Read the blog</a>
       </div>
     </div>
   </section>

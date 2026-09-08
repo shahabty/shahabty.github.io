@@ -46,4 +46,9 @@ const posts = sortByDateDesc(await getCollection('blog', ({ data }) => !data.dra
       </ul>
     </div>
   </section>
+  <script is:inline>
+    addEventListener('pageshow', (event) => {
+      if (event.persisted) location.reload();
+    });
+  </script>
 </BaseLayout>

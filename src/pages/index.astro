@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import { siteConfig } from '../data/site';
+import { withBuildId } from '../lib/buildId';
 import { getCollection } from 'astro:content';
 import { sortByDateDesc } from '../lib/dates';
 import { estimateReadingTimeMinutes } from '../lib/readingTime';
@@ -32,7 +33,7 @@ function renderBioParagraph(paragraph: string) {
       <p class="hero__brand">{siteConfig.name}</p>
       <h1 class="hero__title">{siteConfig.title}</h1>
       <div class="cta-row">
-        <a class="button button--primary" href="/blog/">Read the blog</a>
+        <a class="button button--primary" href={withBuildId('/blog/')}>Read the blog</a>
       </div>
     </div>
   </section>
@@ -93,7 +94,7 @@ function renderBioParagraph(paragraph: string) {
             />
           ))
         }
-        <p><a href="/blog/">All posts →</a></p>
+        <p><a href={withBuildId('/blog/')}>All posts →</a></p>
       </div>
     </div>
   </section>

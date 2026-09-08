@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/site';
+import { withBuildId } from '../lib/buildId';
 
 const pathname = Astro.url.pathname.replace(/\/+$/, '') || '/';
 
@@ -9,6 +10,10 @@ function isCurrent(href: string): boolean {
     return pathname === '/';
   }
   return pathname === normalized || pathname.startsWith(`${normalized}/`);
+}
+
+function navHref(href: string): string {
+  return href.startsWith('/blog') ? withBuildId(href) : href;
 }
 ---
 
@@ -27,7 +32,7 @@ function isCurrent(href: string): boolean {
     <nav class="nav" aria-label="Primary">
       {
         siteConfig.nav.map((item) => (
-          <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+          <a href={navHref(item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>
             {item.label}
           </a>
         ))

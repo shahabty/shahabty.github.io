@@ -11,6 +11,13 @@ export function toIsoDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
-export function sortByDateDesc<T extends { data: { pubDate: Date } }>(items: T[]): T[] {
-  return [...items].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+export function sortByDateDesc<T extends { id?: string; data: { pubDate: Date } }>(items: T[]): T[] {
+  return [...items].sort((a, b) => {
+    const dateDiff = b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    if (dateDiff !== 0) {
+      return dateDiff;
+    }
+
+    return (a.id ?? '').localeCompare(b.id ?? '');
+  });
 }

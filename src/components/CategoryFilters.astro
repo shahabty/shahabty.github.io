@@ -1,5 +1,6 @@
 ---
 import { listCategories, type CategoryId } from '../lib/categories';
+import { withBuildId } from '../lib/buildId';
 
 type Props = {
   active?: CategoryId | 'all';
@@ -10,10 +11,10 @@ const categories = listCategories();
 ---
 
 <nav class="category-filters" aria-label="Blog categories">
-  <a href="/blog/" aria-current={active === 'all' ? 'page' : undefined}>All</a>
+  <a href={withBuildId('/blog/')} aria-current={active === 'all' ? 'page' : undefined}>All</a>
   {
     categories.map((category) => (
-      <a href={category.path} aria-current={active === category.id ? 'page' : undefined}>
+      <a href={withBuildId(category.path)} aria-current={active === category.id ? 'page' : undefined}>
         {category.name}
       </a>
     ))

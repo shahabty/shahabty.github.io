@@ -1,5 +1,6 @@
 ---
 import { getCategory, type CategoryId } from '../lib/categories';
+import { withBuildId } from '../lib/buildId';
 import { formatDate, toIsoDate } from '../lib/dates';
 import { readingTimeLabel } from '../lib/readingTime';
 
@@ -19,7 +20,7 @@ const categoryMeta = getCategory(category);
 
 <article class="post-card">
   <div class="meta">
-    <a class="badge" href={categoryMeta.path}>{categoryMeta.name}</a>
+    <a class="badge" href={withBuildId(categoryMeta.path)}>{categoryMeta.name}</a>
     <time datetime={toIsoDate(pubDate)}>{formatDate(pubDate)}</time>
     <span>{readingTimeLabel(readingMinutes)}</span>
   </div>
