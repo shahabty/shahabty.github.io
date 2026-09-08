@@ -1,14 +1,14 @@
-# Home about + responsiveness
+# Responsiveness pass
 
 ## Checklist
-- [x] Restore location/interests `about-panel` beside About on home
-- [x] Rewrite `longBio` from user draft (natural, first-person)
-- [x] Link Prof. Yang Wang in bio
-- [x] Audit/fix mobile responsiveness (header wrap, full-width CTA, about stack)
-- [x] Run tests + build; push when solid
+- [x] Phone (320–390): header, blog title, filters, cards, post body
+- [x] Tablet (768): about split, blog, nav
+- [x] Desktop (1280+): about sticky panel, hero
+- [x] Fix overflow / wrapping / touch targets
+- [x] Build, push
 
 ## Review
-- About uses `.split.about-layout` with prose + sticky facts panel (Based in / Interests)
-- Bio rewritten through childhood → Manitoba/York → Huawei → Cerebras/tools → colleagues → film/screenwriting
-- Mobile: header nav wraps under brand; primary CTA full width; facts panel stacks above bio
-- `npm test` 21/21; `npm run build` ok
+- No horizontal overflow at 320/390/768
+- Mobile header height token updated for wrapped nav + scroll padding
+- Titles/prose use overflow-wrap; filters and badges tighten on small screens
+- Container/grid children use min-width: 0 to prevent grid blowout
