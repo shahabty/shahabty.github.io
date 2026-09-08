@@ -10,9 +10,10 @@ type Props = {
   pubDate: Date;
   category: CategoryId;
   readingMinutes: number;
+  tags?: readonly string[];
 };
 
-const { title, description, href, pubDate, category, readingMinutes } = Astro.props;
+const { title, description, href, pubDate, category, readingMinutes, tags = [] } = Astro.props;
 const categoryMeta = getCategory(category);
 ---
 
@@ -24,4 +25,13 @@ const categoryMeta = getCategory(category);
   </div>
   <h3><a href={href}>{title}</a></h3>
   <p>{description}</p>
+  {
+    tags.length > 0 && (
+      <p class="topics">
+        {tags.map((tag) => (
+          <span>#{tag}</span>
+        ))}
+      </p>
+    )
+  }
 </article>

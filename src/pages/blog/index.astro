@@ -38,6 +38,7 @@ const posts = sortByDateDesc(await getCollection('blog', ({ data }) => !data.dra
                 pubDate={post.data.pubDate}
                 category={post.data.category}
                 readingMinutes={estimateReadingTimeMinutes(post.body ?? '')}
+                tags={post.data.tags}
               />
             </li>
           ))

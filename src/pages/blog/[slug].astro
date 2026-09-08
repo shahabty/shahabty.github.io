@@ -54,6 +54,15 @@ const modifiedTime = (post.data.updatedDate ?? post.data.pubDate).toISOString();
         </p>
         <h1>{post.data.title}</h1>
         <p class="section__lede">{post.data.description}</p>
+        {
+          post.data.tags.length > 0 && (
+            <p class="topics">
+              {post.data.tags.map((tag) => (
+                <span>#{tag}</span>
+              ))}
+            </p>
+          )
+        }
         <p class="meta">
           <a href={`/blog/${post.id}.md`}>Plain markdown for AI crawlers</a>
         </p>

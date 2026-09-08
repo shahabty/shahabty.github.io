@@ -55,6 +55,7 @@ const posts = sortByDateDesc(
                   pubDate={post.data.pubDate}
                   category={post.data.category}
                   readingMinutes={estimateReadingTimeMinutes(post.body ?? '')}
+                  tags={post.data.tags}
                 />
               </li>
             ))}

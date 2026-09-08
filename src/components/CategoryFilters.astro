@@ -10,10 +10,10 @@ const categories = listCategories();
 ---
 
 <nav class="category-filters" aria-label="Blog categories">
-  <a href="/blog/" aria-current={active === 'all' ? 'true' : undefined}>All</a>
+  <a href="/blog/" aria-current={active === 'all' ? 'page' : undefined}>All</a>
   {
     categories.map((category) => (
-      <a href={category.path} aria-current={active === category.id ? 'true' : undefined}>
+      <a href={category.path} aria-current={active === category.id ? 'page' : undefined}>
         {category.name}
       </a>
     ))
