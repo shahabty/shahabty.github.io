@@ -24,6 +24,7 @@ npm run dev
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview the production build
 - `npm test` — run unit tests
+- `npm run blog-agent -- "text"` — AI-powered blog post refinement and publishing
 
 ## Blog categories
 
@@ -44,6 +45,33 @@ tags: [ai]
 ```
 
 Valid categories: `field-notes`, `quiet-thoughts`, `frame-notes`.
+
+### Automated Blog Agent
+
+The blog agent uses AI to refine your writing and automatically publish posts:
+
+```bash
+# Set your OpenAI API key
+export OPENAI_API_KEY="sk-..."
+
+# Publish a blog post from text
+npm run blog-agent -- "Your draft blog post text here..."
+
+# Or from a file
+npm run blog-agent -- --file drafts/my-post.txt
+```
+
+The agent will:
+- Fix grammar and spelling
+- Improve style, clarity, and flow
+- Restructure with proper headings
+- Optimize for SEO
+- Automatically determine the best category
+- Generate relevant tags
+- Create a URL-friendly slug
+- Commit and push to GitHub
+
+**Requirements**: Set `OPENAI_API_KEY` environment variable with your OpenAI API key.
 
 ## SEO / AI crawlers
 

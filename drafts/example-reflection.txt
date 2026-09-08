@@ -1,0 +1,11 @@
+i've been reflecting on why i started working in AI. it wasn't because of the hype or the money. it was actually a film that changed my perspective - her, the spike jonze movie about AI and loneliness.
+
+there's this scene where joaquin phoenix's character is walking through a crowded subway station, and everyone around him is talking to their AI assistants. it looks dystopian at first, but then you realize - people seem less lonely. they're connecting, just differently.
+
+that paradox stuck with me. can technology that seems isolating actually bring us closer? i think about this constantly in my work. we're building systems that mediate human connection. the responsibility is massive.
+
+we tend to focus on the technical challenges - model accuracy, latency, safety. those matter, obviously. but the deeper question is: what kind of connection are we facilitating? are we amplifying our best qualities or our worst?
+
+the film industry has been asking these questions about technology and humanity for decades. science fiction isn't prediction - it's warning and aspiration rolled into one. maybe that's what we need more of in AI development. not just ethics boards and alignment research (though we need those), but storytellers helping us imagine futures worth building.
+
+anyway, just some thoughts. been thinking about writing more at the intersection of AI and storytelling. there's something there about how we shape technology and how technology shapes us back.
