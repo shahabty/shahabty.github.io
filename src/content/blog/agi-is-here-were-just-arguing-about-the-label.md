@@ -162,30 +162,16 @@ And those two risks are not mutually exclusive. Society could face severe econom
 
 ## What I Think Happens Next
 
-I do not think AGI will arrive with a dramatic announcement.
-
-I think models will gradually become more reliable. Agents will work for hours, then days, then much longer. Memory will improve. AI will increasingly operate computers and software without constant supervision. AI systems will help design better AI systems. Robotics will connect intelligence to the physical world. The cost of producing cognitive work will continue falling.
-
-Meanwhile, people will continue arguing about whether any of this counts as AGI.
-
-At some point, the argument may become almost absurd. We could have AI systems doing a meaningful percentage of software engineering, research, finance, design, legal work, and administration while experts continue debating whether the systems technically meet the definition of general intelligence.
+I do not think AGI will arrive with a dramatic announcement. I think models will gradually become more reliable. Agents will work for hours, then days, then much longer. Memory will improve. AI will increasingly operate computers and software without constant supervision. AI systems will help design better AI systems. Robotics will connect intelligence to the physical world. The cost of producing cognitive work will continue falling. Meanwhile, people will continue arguing about whether any of this counts as AGI. At some point, the argument may become almost absurd. We could have AI systems doing a meaningful percentage of software engineering, research, finance, design, legal work, and administration while experts continue debating whether the systems technically meet the definition of general intelligence.
 
 Maybe history will eventually recognize two different milestones. The first will be practical AGI: the point when machine intelligence became general enough to transform intellectual work and the economy. The second will be textbook AGI: the point when machines finally demonstrated whatever combination of autonomy, reliability, continual learning, adaptability, and learning efficiency researchers eventually decide is necessary.
 
 Those dates could be years apart.
 
-And perhaps that is the most provocative possibility of all.
-
-Maybe AGI is not here yet.
-
-Maybe it is.
+And perhaps that is the most provocative possibility of all. Maybe AGI is not here yet. Maybe it is.
 
 But perhaps we are already reaching the point where the distinction matters less than we expected.
 
 We spent decades asking when machines would become intelligent enough to change the world.
 
-It may turn out that we asked the question backwards.
-
-The world could change first.
-
-And only afterward will we agree on what to call the machines that changed it.
+It may turn out that we asked the question backwards. The world could change first. And only afterward will we agree on what to call the machines that changed it.
