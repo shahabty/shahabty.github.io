@@ -84,17 +84,15 @@ Without tests, it has vibes.
 And models are extremely good at producing code that has good vibes.
 So I want agents running tests constantly.
 
-```
-Implement something.
-Run the targeted test.
-Fix it.
-Run neighboring tests.
-Continue.
-Typecheck.
-Lint.
-Build.
-Run integration tests.
-```
+> Implement something.
+> Run the targeted test.
+> Fix it.
+> Run neighboring tests.
+> Continue.
+> Typecheck.
+> Lint.
+> Build.
+> Run integration tests.
 
 Eventually run the whole relevant suite.
 The workflow should be a loop, not a ceremony performed at the end.
@@ -127,16 +125,14 @@ A better debugging workflow is:
 
 Otherwise agents can enter a slightly comedic loop.
 
-```
-Maybe it's the cache.
-Change cache.
-No.
-Maybe it's the race condition.
-Change synchronization.
-No.
-Maybe it's the parser.
-Change parser.
-```
+> Maybe it's the cache.
+> Change cache.
+> No.
+> Maybe it's the race condition.
+> Change synchronization.
+> No.
+> Maybe it's the parser.
+> Change parser.
 
 Three hypotheses later, the original bug remains and the code now contains the geological sediment of several incorrect theories.
 Logs are better than imagination.
@@ -308,7 +304,6 @@ Same model.
 Completely different capability.
 The second developer has started building something closer to a software factory.
 
-> [!NOTE]
 > Human intent enters.
 > Agents attempt implementations.
 > Tests reject invalid worlds.
