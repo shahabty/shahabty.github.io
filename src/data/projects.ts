@@ -14,9 +14,9 @@ export const projects: Project[] = [
     topics: ['startups', 'coaching', 'product'],
   },
   {
-    name: 'SEP',
+    name: 'Software Evolution Protocol (SEP)',
     description:
-      'A repository for SEP. I use it as an active project space for building and sharing work in public on GitHub.',
+      'A repository for the Software Evolution Protocol. I use it as an active project space for building and sharing work in public on GitHub.',
     url: 'https://github.com/shahabty/SEP',
     topics: ['github', 'opensource', 'engineering'],
   },

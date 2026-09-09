@@ -14,7 +14,9 @@ describe('site content invariants', () => {
     expect(projects.length).toBeGreaterThanOrEqual(2);
     expect(projects[0]?.name).toBe('Grandpa Frank');
     expect(projects[0]?.url).toBe('https://grandpafrank.com/');
-    expect(projects.some((project) => project.name === 'SEP')).toBe(true);
+    expect(projects.some((project) => project.name === 'Software Evolution Protocol (SEP)')).toBe(
+      true,
+    );
     expect(projects.some((project) => project.url === 'https://github.com/shahabty/SEP')).toBe(
       true,
     );
