@@ -10,10 +10,14 @@ describe('site content invariants', () => {
     expect(siteConfig.links.scholar).toContain('9jxhbU56FTEC');
   });
 
-  it('features Grandpa Frank as the current project', () => {
-    expect(projects).toHaveLength(1);
+  it('keeps key projects listed with valid urls', () => {
+    expect(projects.length).toBeGreaterThanOrEqual(2);
     expect(projects[0]?.name).toBe('Grandpa Frank');
     expect(projects[0]?.url).toBe('https://grandpafrank.com/');
+    expect(projects.some((project) => project.name === 'SEP')).toBe(true);
+    expect(projects.some((project) => project.url === 'https://github.com/shahabty/SEP')).toBe(
+      true,
+    );
   });
 
   it('lists papers and patents with real urls', () => {
