@@ -214,12 +214,19 @@ It's easy to blame the model when the actual problem is that we've dropped it in
 The agent should be able to do roughly what a developer can do.
 
 > Start the app.
+
 > Run tests.
+
 > Build the project.
+
 > Inspect logs.
+
 > Query the development database.
+
 > Use the browser when necessary.
+
 > Observe API responses.
+
 > Reproduce failures.
 
 If it can't observe the system, it has to guess.
@@ -236,9 +243,13 @@ It isn't. Someone still needs to understand those lines.
 I prefer tasks that produce coherent, reviewable checkpoints.
 
 > Database layer.
+
 > Then service layer.
+
 > Then API.
+
 > Then UI.
+
 > Then integration.
 
 The exact decomposition depends on the system, but I want each stage to leave the repository in a state that can be tested and understood. Small diffs are easier for humans to review. They are also easier for agents to review.
@@ -268,15 +279,20 @@ They will happily tell you that they:
 * and ensured robust error handling.
 
 Fantastic.
-
 Show me the diff.
 
 > Did it modify unrelated files?
+
 > Did it duplicate an abstraction?
+
 > Did it silently change an API?
+
 > Did it weaken a test?
+
 > Did it catch an exception and ignore it?
+
 > Did it add a dependency for something available in the standard library?
+
 > Did 30 lines somehow become 400?
 
 The explanation is useful. The code is the evidence.
