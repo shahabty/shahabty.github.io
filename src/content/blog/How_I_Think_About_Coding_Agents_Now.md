@@ -2,7 +2,7 @@
 title: "How I Think About Coding Agents Now"
 description: "Coding agents are getting good enough that the interesting question is no longer can they write the code?"
 pubDate: 2026-09-09
-category: quiet-thoughts
+category: field-notes
 tags: [ai, coding-agents, software-engineering, multi-agent, developer-productivity, spec-driven]
 ---
 

@@ -2,7 +2,7 @@
 title: "AGI Is Here. We’re Just Arguing About the Label."
 description: "The AGI debate keeps moving the finish line, while imperfect systems may already be transforming the economy faster than the label can catch up."
 pubDate: 2026-09-08
-category: quiet-thoughts
+category: field-notes
 tags: [agi, ai, technology, economics, scaling]
 ---
 
