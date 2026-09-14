@@ -2,7 +2,7 @@
 title: "The Engineer Who Owns the Product"
 description: "Owning a product as an engineer means more than shipping correct code. It means managing context, uncertainty, and the habits that keep teams aligned."
 pubDate: 2026-09-14
-category: quiet-thoughts
+category: field-notes
 tags: [engineering, product, ownership, leadership, documentation, communication]
 ---
 
