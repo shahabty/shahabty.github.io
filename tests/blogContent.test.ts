@@ -22,12 +22,12 @@ describe('blog content', () => {
     }
   });
 
-  it('includes the AGI quiet-thoughts post', () => {
+  it('includes the AGI field-notes post', () => {
     expect(listPostFiles()).toContain('agi-is-here-were-just-arguing-about-the-label.md');
     const raw = readFileSync(
       path.join(blogDir, 'agi-is-here-were-just-arguing-about-the-label.md'),
       'utf8',
     );
-    expect(raw).toMatch(/^category:\s*quiet-thoughts\s*$/m);
+    expect(raw).toMatch(/^category:\s*field-notes\s*$/m);
   });
 });
